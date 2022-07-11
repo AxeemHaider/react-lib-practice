@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICounterEntity } from "../domain";
 
 const initialState: ICounterEntity = {
@@ -6,12 +6,18 @@ const initialState: ICounterEntity = {
 };
 
 const slice = createSlice({
-  name: "lib",
+  name: "counter",
   initialState,
 
   reducers: {
-    increment: (state) => {
-      state.value++;
+    increment: (state, { payload }: PayloadAction<any>) => {
+      state = payload;
+    },
+    decrement: (state, { payload }: PayloadAction<any>) => {
+      state = payload;
     },
   },
 });
+
+export const { increment, decrement } = slice.actions;
+export const reducer = slice.reducer;
