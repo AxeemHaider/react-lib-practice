@@ -1,25 +1,21 @@
-import { CounterModel } from "../domain";
+import { ICounterStore } from "../domain/counter.store";
 
 export class CounterUseCase {
-  private readonly counterModel: CounterModel;
+  public constructor(private readonly store: ICounterStore) {}
 
-  public constructor(initialNumber: number) {
-    this.counterModel = new CounterModel(initialNumber);
-  }
-
-  public count() {
-    return this.counterModel.value;
+  public getValue() {
+    return this.store.counter.value;
   }
 
   public increment() {
-    this.counterModel.increment();
+    this.store.counter.value++;
   }
 
   public decrement() {
-    if (this.count() === 0) {
+    if (this.getValue() === 0) {
       return;
     }
 
-    this.counterModel.decrement();
+    this.store.counter.value;
   }
 }
