@@ -4,6 +4,7 @@ specifiers:
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   '@vitejs/plugin-react': ^1.3.0
+  core: file:../core
   react: ^18.0.0
   react-dom: ^18.0.0
   react-redux: ^8.0.2
@@ -11,6 +12,7 @@ specifiers:
   vite: ^2.9.9
 
 dependencies:
+  core: file:../core_nslopyjcp5mj4qeghosdf4vyei
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.2_v7vsrdtui4d36prbwvdnlb7tpq
@@ -944,3 +946,19 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  file:../core_nslopyjcp5mj4qeghosdf4vyei:
+    resolution: {directory: ../core, type: directory}
+    id: file:../core
+    name: core
+    version: 1.0.0
+    dependencies:
+      react: 18.2.0
+      react-redux: 8.0.2_v7vsrdtui4d36prbwvdnlb7tpq
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+      - react-dom
+      - react-native
+      - redux
+    dev: false
