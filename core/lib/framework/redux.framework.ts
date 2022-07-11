@@ -11,7 +11,8 @@ const slice = createSlice({
 
   reducers: {
     increment: (state, { payload }: PayloadAction<any>) => {
-      state = payload;
+      console.log("payload", payload);
+      state.value = payload.value;
     },
     decrement: (state, { payload }: PayloadAction<any>) => {
       state = payload;

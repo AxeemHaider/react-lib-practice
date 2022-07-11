@@ -12,6 +12,10 @@ export const useLibRedux = () => {
     (state: { counter: ICounterEntity }) => state.counter
   );
 
+  const counterValue = useSelector((state: any) => state.counter.value);
+
+  console.log(counter, counterValue);
+
   const increment = React.useCallback((counter: ICounterEntity) => {
     dispatch(incrementAction(counter));
   }, []);

@@ -8,6 +8,8 @@ function App() {
     <div>
       Count: {getValue()}
       <br />
+      Store Count: {store.counter.value}
+      <br />
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
     </div>
