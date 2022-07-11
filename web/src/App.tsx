@@ -1,7 +1,8 @@
-import { useCounterController } from "core";
+import { useCounterController, useLibRedux } from "core";
 
 function App() {
-  const { getValue, increment, decrement } = useCounterController();
+  const store = useLibRedux();
+  const { getValue, increment, decrement } = useCounterController(store);
 
   return (
     <div>

@@ -1,23 +1,28 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ICounterEntity } from "../domain";
-import { increment, decrement } from "./redux.framework";
+import {
+  increment as incrementAction,
+  decrement as decrementAction,
+} from "./redux.framework";
 
 export const useLibRedux = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state: any) => state.counter);
+  const counter = useSelector(
+    (state: { counter: ICounterEntity }) => state.counter
+  );
 
-  const dispatchIncrement = React.useCallback((counter: ICounterEntity) => {
-    dispatch(increment(counter));
+  const increment = React.useCallback((counter: ICounterEntity) => {
+    dispatch(incrementAction(counter));
   }, []);
 
-  const dispatchDecrement = React.useCallback((counter: ICounterEntity) => {
-    dispatch(decrement(counter));
+  const decrement = React.useCallback((counter: ICounterEntity) => {
+    dispatch(decrementAction(counter));
   }, []);
 
   return {
     counter,
-    dispatchIncrement,
-    dispatchDecrement,
+    increment,
+    decrement,
   };
 };
