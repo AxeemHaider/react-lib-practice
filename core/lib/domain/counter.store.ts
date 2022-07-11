@@ -3,6 +3,6 @@ import { ICounterEntity } from "./counter.domain";
 export interface ICounterStore {
   counter: ICounterEntity;
 
-  increment(): void;
-  decrement(): void;
+  increment(counter: ICounterEntity): void;
+  decrement(counter: ICounterEntity): void;
 }

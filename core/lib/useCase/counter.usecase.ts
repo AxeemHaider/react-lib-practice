@@ -1,14 +1,14 @@
 import { ICounterStore } from "../domain/counter.store";
 
 export class CounterUseCase {
-  public constructor(private readonly store: ICounterStore) {}
+  public constructor(private store: ICounterStore) {}
 
   public getValue() {
     return this.store.counter.value;
   }
 
   public increment() {
-    this.store.counter.value++;
+    this.store.increment({ value: this.getValue() + 1 });
   }
 
   public decrement() {
@@ -16,6 +16,6 @@ export class CounterUseCase {
       return;
     }
 
-    this.store.counter.value;
+    this.store.increment({ value: this.getValue() - 1 });
   }
 }
