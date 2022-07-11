@@ -5,14 +5,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update:core": "rm -rf node_modules && pnpm install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
+    "core": "file:../core",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-redux": "^8.0.2",
-    "core": "file:../core"
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
