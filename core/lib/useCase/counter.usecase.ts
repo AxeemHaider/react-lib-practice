@@ -8,7 +8,6 @@ export class CounterUseCase {
   }
 
   public increment() {
-    console.log(this.getValue(), this.getValue() + 1);
     this.store.increment({ value: this.getValue() + 1 });
   }
 
